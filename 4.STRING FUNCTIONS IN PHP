@@ -1,0 +1,64 @@
+<?php
+if (isset($_POST['result'])) {
+    $str = $_POST['str'];
+    $choice = $_POST['choice'];
+    switch ($choice) {
+        case "LENGTH":
+            $ans = strlen($str);
+            break;
+       case "WORD COUNT":
+            $ans = str_word_count($str);
+            break;
+        case "REVERSE":
+            $ans = strrev($str);
+            break;
+        case "UPPERCASE":
+            $ans = strtoupper($str);
+            break;
+        case "LOWERCASE":
+            $ans = strtolower($str);
+            break;
+        default:
+            $ans = "Invalid Choice";
+    }
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Functions</title>
+</head>
+<body>
+<h2 align="center">STRING FUNCTIONS IN PHP</h2>
+<form method="post">
+<table align="center" border="1" cellpadding="10">
+<tr>
+    <td>Enter String</td>
+    <td>
+        <input type="text" name="str" required>
+    </td>
+</tr>
+<tr>
+    <td>Select Function</td>
+    <td>
+        <select name="choice">
+            <option>LENGTH</option>
+            <option>WORD COUNT</option>
+            <option>REVERSE</option>
+            <option>UPPERCASE</option>
+            <option>LOWERCASE</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>
+        <input type="submit" name="result" value="RESULT">
+    </td>
+    <td>
+        <input type="text" value="<?php echo isset($ans) ? $ans : ''; ?>" readonly>
+    </td>
+</tr>
+</table>
+</form>
+</body>
+</html>
