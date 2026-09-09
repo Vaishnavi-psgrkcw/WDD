@@ -1,0 +1,19 @@
+<?php
+
+$num = 0;
+
+try
+{
+    if ($num == 0)
+    {
+        throw new Exception("Number cannot be zero");
+    }
+
+    echo "Number is valid";
+}
+catch (Exception $e)
+{
+    echo "Error: " . $e->getMessage();
+}
+
+?>
