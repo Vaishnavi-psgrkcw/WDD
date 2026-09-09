@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks</title>
+</head>
+
+<body>
+
+<h2>Student Marks</h2>
+
+<?php
+
+$marks = 75;
+
+// If-Else
+if ($marks >= 50) {
+    echo "Result: Pass<br>";
+} else {
+    echo "Result: Fail<br>";
+}
+
+// For Loop
+echo "<br>Numbers from 1 to 5:<br>";
+
+for ($i = 1; $i <= 5; $i++) {
+    echo $i . "<br>";
+}
+
+?>
+
+</body>
+</html>
