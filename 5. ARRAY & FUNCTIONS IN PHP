@@ -1,0 +1,85 @@
+<?php
+
+function calculate($arr, $choice)
+{
+    switch ($choice)
+    {
+        case "SUM":
+            return array_sum($arr);
+
+        case "COUNT":
+            return count($arr);
+
+        case "MAXIMUM":
+            return max($arr);
+
+        case "MINIMUM":
+            return min($arr);
+
+        default:
+            return "Invalid Choice";
+    }
+}
+
+if (isset($_POST['result']))
+{
+    $numbers = $_POST['numbers'];
+    $arr = explode(",", $numbers);
+
+    $choice = $_POST['choice'];
+
+    $ans = calculate($arr, $choice);
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Functions</title>
+</head>
+
+<body>
+
+<h2 align="center">ARRAY & FUNCTIONS IN PHP</h2>
+
+<form method="post">
+
+<table align="center" border="1" cellpadding="10">
+
+<tr>
+    <td>Enter Numbers</td>
+    <td>
+        <input type="text" name="numbers" placeholder="10,20,30,40" required>
+    </td>
+</tr>
+
+<tr>
+    <td>Select Function</td>
+    <td>
+        <select name="choice">
+            <option>SUM</option>
+            <option>COUNT</option>
+            <option>MAXIMUM</option>
+            <option>MINIMUM</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <input type="submit" name="result" value="RESULT">
+    </td>
+
+    <td>
+        <input type="text"
+               value="<?php echo isset($ans) ? $ans : ''; ?>"
+               readonly>
+    </td>
+</tr>
+
+</table>
+
+</form>
+
+</body>
+</html>
